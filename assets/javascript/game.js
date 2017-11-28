@@ -48,6 +48,8 @@ console.log("crystal4 = " + crystNum4);
 $("#crystal4").append(crystNum4);
 
 
+
+
 // //take the above concept and apply to all 4 crystal buttons with loop
 // for (var i = 0; i < 4; i++) {
 // 	var crystNum = Math.floor(Math.random() * 12 ) + 1;
@@ -70,25 +72,35 @@ $("#crystal1").on("click", function() {
 	console.log("total before: " + total);
 	total = total + crystNum1;
 	console.log("total after: " + total);
+	// sum and display current total in DOM
+	$("#score").html(total);
 });
 
 $("#crystal2").on("click", function() {
 	console.log("total before: " + total);
 	total = total + crystNum2;
 	console.log("total after: " + total);
+	// sum and display current total in DOM
+	$("#score").html(total);
 });
 
 $("#crystal3").on("click", function() {
 	console.log("total before: " + total);
 	total = total + crystNum3;
 	console.log("total after: " + total);
+	// sum and display current total in DOM
+	$("#score").html(total);
 });
 
 $("#crystal4").on("click", function() {
 	console.log("total before: " + total);
 	total = total + crystNum4;
 	console.log("total after: " + total);
+	// sum and display current total in DOM
+	$("#score").html(total);
 });
+
+
 
 
 // take above concept and implement in single on click function for all 4 buttons
