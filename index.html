@@ -1,0 +1,118 @@
+<!-- ### Option One: CrystalsCollector Game (Recommended)
+
+![Crystal Collector](Images/1-CrystalCollector.jpg)
+
+1. [Watch the demo](homework_demos/crystalsCollector_demo.mp4).
+
+2. The player will have to guess the answer, just like in Hangman. This time, though, the player will guess with numbers instead of letters. 
+
+3. Here's how the app works:
+
+   * There will be four crystals displayed as buttons on the page.
+
+   * The player will be shown a random number at the start of the game.
+
+   * When the player clicks on a crystal, it will add a specific amount of points to the player's total score. 
+
+     * Your game will hide this amount until the player clicks a crystal.
+     * When they do click one, update the player's score counter.
+
+   * The player wins if their total score matches the random number from the beginning of the game.
+
+   * The player loses if their score goes above the random number.
+
+   * The game restarts whenever the player wins or loses.
+
+     * When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
+
+   * The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
+
+##### Option 1 Game design notes
+
+* The random number shown at the start of the game should be between 19 - 120.
+
+* Each crystal should have a random hidden value between 1 - 12. -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crystal Collector</title>
+
+
+
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body>
+
+  
+  <!--container class for entire page-->
+  <div class="container">
+
+    <!--Jumbotron with page header -->
+    <div class="jumbotron">
+      <h1 class="text-center">Crystal Collector</h1>
+    </div> <!-- jumbotron close -->
+
+    <div class="row">
+      <div class="col-lg-4">
+
+        <!-- Game Instructions Panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Instructions</h3>
+          </div>
+
+          <div class="panel-body">
+            <p> blah blah blah </p>
+            <p> more blah... </p>
+            <p> blah more times... </p>
+            <p> getting tired of blah </p>
+            <p> enought blah for now. </p>
+          </div> <!-- Panel Body close -->
+        </div> <!-- Panel close -->
+      </div> <!-- column close --> 
+
+      <!-- Game Panel -->
+      <div class="col-lg-8">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Game</h3>
+          </div>
+          <div class="panel-body">
+            <p id="start-number">
+            </p>
+            <div class="crystals">
+              <button id="crystal1" class="btn btn-primary number" value="1"><h1>1</h1></button>
+              <button id="crystal2" class="btn btn-primary number" value="2"><h1>2</h1></button>
+              <button id="crystal3" class="btn btn-primary number" value="3"><h1>3</h1></button>
+              <button id="crystal4" class="btn btn-primary number" value="4"><h1>4</h1></button>
+            </div>
+            <p id="wins">Wins</p>
+            <p id="losses">Losses</p>
+            <hr>
+            <h3 id="score">Total Score</h3>
+          </div> <!-- Panel Body close -->
+        </div> <!-- Panel close -->
+      </div> <!--column close -->
+
+    </div> <!-- row 1 close -->
+
+  </div> <!-- container close -->
+
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- link to JS file -->
+  <script src="assets/javascript/game.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
