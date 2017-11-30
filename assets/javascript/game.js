@@ -15,23 +15,20 @@
 
 
 
-//creating all variables needed to run game
+//creating all variables for holding data
 var randomNum;
 var total = 0;
+// var crystNum1 = 0;
+// var crystNum2 = 0;
+// var crystNum3 = 0;
+// var crystNum4 = 0;
+// console.log(total);
+
+// game counters
 var loss = 0;
 var win = 0;
 
-
-
 // function startGame() {
-
-// 	var randomNum;
-// 	var total = 0;
-
-
-
-
-/////////////////////////
 
 	// Returns a random integer between 19 & 120 and assigns it to randomNum
 	var randomNum = Math.floor(Math.random() * 101 ) + 19;
@@ -43,7 +40,7 @@ var win = 0;
 
 	// generate and assign random number between 1-12 to each of the crystals
 	// first generate random number between 1-12 for a single crystal
-
+	console.log(crystNum1);
 	var crystNum1 = Math.floor(Math.random() * 12 ) + 1;
 	console.log("crystal1 = " + crystNum1);
 	// $("#crystal1").append(crystNum1);
@@ -77,7 +74,6 @@ var win = 0;
 
 // }; // close bracket for startGame function
 
-///////////////////
 
 	// dynamically create image elements for crystals as buttons
 
@@ -116,10 +112,13 @@ var win = 0;
 	// imageCrystal4.attr("data-crystalvalue", crystNum4);
 	$(".crystals").append(imageCrystal4);
 
+
+
+
 // add value of each button to total when a crystal button is clicked
 	$(".crystal1").on("click", function() {
 		$(".crystal1").text(crystNum1);
-		// console.log("total before: " + total);
+		console.log("total before: " + total);
 		total = total + crystNum1;
 		console.log("total after: " + total);
 		// sum and display current total in DOM
@@ -157,8 +156,6 @@ var win = 0;
 		decision();
 	});
 
-
-
 // take above concept and implement in single on click function for all 4 buttons
 // $("#crystals").on("click", function() {
 // 	console.log("total before: " + total);
@@ -193,10 +190,13 @@ function decision() {
 }; //close bracket for decision function
 
 
+
 // game resets random number and total when game over
-
-
 // startGame();
+
+
+
+
 
 // } // close bracket for window.onload function
 
