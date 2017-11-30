@@ -1,5 +1,6 @@
 // JS for Crystal Collector game using jQuery - Homework #4 
 //////////////////////////////////////////////////////////////////////////////////
+
 // psuedo code the game before beginning real code
 // upon start game needs a random number between 19 & 120 displayed in DOM
 // game needs 4 crystals
@@ -11,24 +12,33 @@
 // loss counter increments if total > random number
 // game resets random number and total when game over
 
-// window.onload = function() {
+//////////////////////////////////////////////////////////////////////////////////
+
+window.onload = function() {
 
 
 
 //creating all variables for holding data
 var randomNum;
 var total = 0;
-// var crystNum1 = 0;
-// var crystNum2 = 0;
-// var crystNum3 = 0;
-// var crystNum4 = 0;
-// console.log(total);
+var crystNum1 = 0;
+var crystNum2 = 0;
+var crystNum3 = 0;
+var crystNum4 = 0;
+var imageCrystal1;
+var imageCrystal2;
+var imageCrystal3;
+var imageCrystal4;
 
 // game counters
 var loss = 0;
 var win = 0;
 
-// function startGame() {
+
+// all code placed inside of this function to enable reset after game over
+function startGame() {
+	// empties div that contains the crystal image buttons so doesnt duplicate
+	$(".crystals").empty();
 
 	// Returns a random integer between 19 & 120 and assigns it to randomNum
 	var randomNum = Math.floor(Math.random() * 101 ) + 19;
@@ -36,47 +46,7 @@ var win = 0;
 	// jQuery syntax for grabbing element for random number and displaying on DOM
 	$("#start-number").html("Random Number: " + randomNum);
 
-
-
-	// generate and assign random number between 1-12 to each of the crystals
-	// first generate random number between 1-12 for a single crystal
-	console.log(crystNum1);
-	var crystNum1 = Math.floor(Math.random() * 12 ) + 1;
-	console.log("crystal1 = " + crystNum1);
-	// $("#crystal1").append(crystNum1);
-
-	var crystNum2 = Math.floor(Math.random() * 12 ) + 1;
-	console.log("crystal2 = " + crystNum2);
-	// $("#crystal2").append(crystNum2);
-
-	var crystNum3 = Math.floor(Math.random() * 12 ) + 1;
-	console.log("crystal3 = " + crystNum3);
-	// $("#crystal3").append(crystNum3);
-
-	var crystNum4 = Math.floor(Math.random() * 12 ) + 1;
-	console.log("crystal4 = " + crystNum4);
-	// $("#crystal4").append(crystNum4);
-
-
-// //take the above concept and apply to all 4 crystal buttons with loop
-// for (var i = 0; i < 4; i++) {
-// 	var crystNum = Math.floor(Math.random() * 12 ) + 1;
-// 	console.log("crystal" + (i + 1) + " = "+ crystNum);
-
-// 	var fourCrystals = $("<div>");
-// 		fourCrystals.attr({
-// 			// class: "crystals",
-// 			number: "crystNum"
-// 	});
-
-// 	$(".crystals").append(crystNum);
-// }
-
-// }; // close bracket for startGame function
-
-
 	// dynamically create image elements for crystals as buttons
-
 	// crystal 1
 	var imageCrystal1 = $("<img>");
 	// First each crystal will be given the class ".crystal-image".
@@ -113,12 +83,43 @@ var win = 0;
 	$(".crystals").append(imageCrystal4);
 
 
+	// generate and assign random number between 1-12 to each of the crystals
+	// first generate random number between 1-12 for a single crystal
+	var crystNum1 = Math.floor(Math.random() * 12 ) + 1;
+	console.log("crystal1 = " + crystNum1);
+	// $("#crystal1").append(crystNum1);
+
+	var crystNum2 = Math.floor(Math.random() * 12 ) + 1;
+	console.log("crystal2 = " + crystNum2);
+	// $("#crystal2").append(crystNum2);
+
+	var crystNum3 = Math.floor(Math.random() * 12 ) + 1;
+	console.log("crystal3 = " + crystNum3);
+	// $("#crystal3").append(crystNum3);
+
+	var crystNum4 = Math.floor(Math.random() * 12 ) + 1;
+	console.log("crystal4 = " + crystNum4);
+	// $("#crystal4").append(crystNum4);
 
 
-// add value of each button to total when a crystal button is clicked
+// // could take the above concept and apply to all 4 crystal buttons with loop
+// for (var i = 0; i < 4; i++) {
+// 	var crystNum = Math.floor(Math.random() * 12 ) + 1;
+// 	console.log("crystal" + (i + 1) + " = "+ crystNum);
+
+// 	var fourCrystals = $("<div>");
+// 		fourCrystals.attr({
+// 			// class: "crystals",
+// 			number: "crystNum"
+// 	});
+
+// 	$(".crystals").append(crystNum);
+// }
+
+
+// add value of each crystal button to total when a crystal button is clicked
 	$(".crystal1").on("click", function() {
 		$(".crystal1").text(crystNum1);
-		console.log("total before: " + total);
 		total = total + crystNum1;
 		console.log("total after: " + total);
 		// sum and display current total in DOM
@@ -128,7 +129,6 @@ var win = 0;
 
 	$(".crystal2").on("click", function() {
 		$(".crystal2").html(crystNum2);
-		// console.log("total before: " + total);
 		total = total + crystNum2;
 		console.log("total after: " + total);
 		// sum and display current total in DOM
@@ -138,7 +138,6 @@ var win = 0;
 
 	$(".crystal3").on("click", function() {
 		$(".crystal3").append(crystNum3);
-		// console.log("total before: " + total);
 		total = total + crystNum3;
 		console.log("total after: " + total);
 		// sum and display current total in DOM
@@ -148,7 +147,6 @@ var win = 0;
 
 	$(".crystal4").on("click", function() {
 		$(".crystal4").append(crystNum4);
-		// console.log("total before: " + total);
 		total = total + crystNum4;
 		console.log("total after: " + total);
 		// sum and display current total in DOM
@@ -156,49 +154,51 @@ var win = 0;
 		decision();
 	});
 
-// take above concept and implement in single on click function for all 4 buttons
-// $("#crystals").on("click", function() {
-// 	console.log("total before: " + total);
-// 	total = total + fourCrystals;
-// 	console.log("total after: " + total);
-// });
+	// could take above concept and implement in single on click function for all 4 buttons
+	// $("#crystals").on("click", function() {
+	// 	console.log("total before: " + total);
+	// 	total = total + fourCrystals;
+	// 	console.log("total after: " + total);
+	// });
 
 
-// game over when total is equal to or greater than random number
-// win counter increments if total = random number
-function decision() {
-	if (total===randomNum) {
-		console.log("you win!")
-		alert("You Win!");
-		win++;
-		console.log("total wins: " + win);
-		$("#winCount").html(win);
-		// startGame();
-		total = 0;
-	}
+	// game over when total is equal to or greater than random number
+	// win counter increments if total = random number
+	function decision() {
+		if (total===randomNum) {
+			console.log("you win!")
+			alert("You Win!");
+			win++;
+			console.log("total wins: " + win);
+			$("#winCount").html(win);
+			startGame();
+			// resets user total counter to zero
+			total = 0;
+		}
 
-// loss counter increments if total > random number
-	else if (total > randomNum) {
-		console.log("you're a loser")
-		alert("Sorry...Loser");
-		loss++;
-		console.log("total losses: " + loss);
-		$("#lossCount").html(loss);
-		// startGame();
-		total = 0;
-	}
-}; //close bracket for decision function
+	// loss counter increments if total > random number
+		else if (total > randomNum) {
+			console.log("you're a loser")
+			alert("Sorry...Loser");
+			loss++;
+			console.log("total losses: " + loss);
+			$("#lossCount").html(loss);
+			startGame();
+			// resets user total counter to zero
+			total = 0;
+		};
+	}; //close bracket for decision function
+
+}; // close bracket for startGame function
+
+// game resets random number and crystal values when game over
+startGame();
 
 
 
-// game resets random number and total when game over
-// startGame();
 
 
-
-
-
-// } // close bracket for window.onload function
+} // close bracket for window.onload function
 
 
 
