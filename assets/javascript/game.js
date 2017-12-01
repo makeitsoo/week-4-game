@@ -53,7 +53,7 @@ function startGame() {
 	// This will allow the CSS to take effect. 
 	imageCrystal1.addClass("crystal1 crystal-image");
 	// Each imageCrystal will be given a src link to the crystal image
-	imageCrystal1.attr("src", "http://kristalcanada.com/EN/wp-content/uploads/2013/10/RUBY-CLUSTER-MAP-672-small.jpg");
+	imageCrystal1.attr("src", "assets/images/crystal1.jpg");
 	// Each imageCrystal will be given a data attribute called data-crystalValue.
 	// This data attribute will be set equal to the array value.
 	// imageCrystal1.text(crystNum1);
@@ -64,21 +64,21 @@ function startGame() {
 	// crystal 2
 	var imageCrystal2 = $("<img>");
 	imageCrystal2.addClass("crystal2 crystal-image");
-	imageCrystal2.attr("src", "https://i.pinimg.com/originals/4c/ba/b3/4cbab33f7c850a4a28d7055e1eb23e21.jpg");
+	imageCrystal2.attr("src", "assets/images/crystal2.jpg");
 	// imageCrystal2.attr("data-crystalvalue", crystNum2);
 	$(".crystals").append(imageCrystal2);
 
 	// crystal 3
 	var imageCrystal3 = $("<img>");
 	imageCrystal3.addClass("crystal3 crystal-image");
-	imageCrystal3.attr("src", "https://i.pinimg.com/originals/0a/ba/87/0aba87d2cb9891c9e10d4c4a4045d62a.jpg");
+	imageCrystal3.attr("src", "assets/images/crystal3.jpg");
 	// imageCrystal3.attr("data-crystalvalue", crystNum3);
 	$(".crystals").append(imageCrystal3);
 
 	// crystal 4
 	var imageCrystal4 = $("<img>");
 	imageCrystal4.addClass("crystal4 crystal-image");
-	imageCrystal4.attr("src", "https://static.pexels.com/photos/159185/amethyst-violet-crystal-cave-druze-159185.jpeg");
+	imageCrystal4.attr("src", "assets/images/crystal4.jpeg");
 	// imageCrystal4.attr("data-crystalvalue", crystNum4);
 	$(".crystals").append(imageCrystal4);
 
